@@ -1,6 +1,7 @@
-## Function Overview
+# Function Overview
 You find the list of function of this library below. For details, please browse the [source code](). <br>
 
+## Clipboard interaction functions for OS X
 
 ### 1. toClipboard
 - Copy an R-object to your clipboard on OS X.
@@ -20,6 +21,7 @@ You find the list of function of this library below. For details, please browse 
 ### 5. fromClipboard.as_named_vec
 - Paste a list of strings from your clipboard (e.g. from Excel) into R, parse it to a numeric R vector on OS X.
 
+## Paste (small) data objects into your code
 
 ### 6. inline_vec.char
 - Paste data into your code easily. Take a character vector, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
@@ -48,6 +50,7 @@ You find the list of function of this library below. For details, please browse 
 ### 12. oo
 - oo <- function () {toClipboard(OutDir); print("OutDir is copied to the Clipbiard")}
 
+## Create plots from directly clipboard
 
 ### 13. clhist
 - Draw a histogram from data pasted from clipboard. Works on OS X only.
