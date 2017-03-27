@@ -1,6 +1,8 @@
 # DataInCode
 # Store (smaller) data objects in your R code - make your script fully reproducable yet easily sharable. 
 # source("~/Github_repos/DataInCode/DataInCode.R")
+# RoxygenReady("~/Github_repos/DataInCode/DataInCode.R")
+
 
 
 ### Clipboard interaction -------------------------------------------------------------------------------------------------
@@ -76,4 +78,5 @@ clpie <-function(..., percentage = TRUE, both_pc_and_value = F, plotname = "Dist
 clbarplot <-function( ..., col = "gold1", sub = F) { #  Draw a barplot from data pasted from clipboard.  Works on OS X only.
   wbarplot(fromClipboard.as_num_vec(), percentage = percentage, savefile = F)
 }
+
 
