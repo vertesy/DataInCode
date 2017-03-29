@@ -9,12 +9,12 @@ Store (smaller) data objects in your R code - make your script fully reproducibl
 values = table(round(rnorm(100))); 
 
 print(values)
-# -2 -1  0  1  2 
-#  8 21 37 28  6 
+-2 -1  0  1  2  3 
+11 22 39 23  4  1 
 
 inline_named_vec(values)
 
- c( "-3" = 2, "-2" = 4, "-1" = 17, "0" = 46, "1" = 27, "2" = 3, "3" = 1 )
+ c( "-2" = 11, "-1" = 22, "0" = 39, "1" = 23, "2" = 4, "3" = 1 )
 
 ```
 
