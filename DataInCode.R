@@ -17,11 +17,15 @@ fromClipboard <- function( sep="\t", header=F) { # Paste data from your clipboar
 }
 
 fromClipboard.as_vec <- function( sep="\t", header=F) { # Paste a list of numbers from your clipboard (e.g. from Excel) into R, parse it to a code-snippet defining an R vector on OS X.
-  return (as.vector(unlist(read.table(pipe("pbpaste"), sep=sep, header=header, stringsAsFactors =F))))
+  vec = as.vector(unlist(read.table(pipe("pbpaste"), sep=sep, header=header, stringsAsFactors =F)))
+  print(paste("Length:", length(vec)))
+  return (vec)
 }
 
 fromClipboard.as_num_vec <- function( sep="\t", header=F) { # Paste a list of strings from your clipboard (e.g. from Excel) into R, parse it to a numeric R vector on OS X.
-  return (as.numeric(unlist(read.table(pipe("pbpaste"), sep=sep, header=header, stringsAsFactors =F))))
+  vec = as.numeric(unlist(read.table(pipe("pbpaste"), sep=sep, header=header, stringsAsFactors =F)))
+  print(paste("Length:", length(vec)))
+  return (vec)
 }
 
 fromClipboard.as_named_vec <- function( sep="\t", header=F) { # Paste a list of strings from your clipboard (e.g. from Excel) into R, parse it to a numeric R vector on OS X.
@@ -29,6 +33,7 @@ fromClipboard.as_named_vec <- function( sep="\t", header=F) { # Paste a list of 
   vecc = tbl[ ,2]
   names(vecc) = tbl[ ,1]
   print("Names should eb in column 1, data in column 2, no header row.")
+  print(paste("Length:", length(vecc)))
   return (vecc)
 }
 
@@ -68,16 +73,16 @@ oo <- function () {toClipboard(OutDir); print("OutDir is copied to the Clipbiard
 ### Plot from clipboard directly -------------------------------------------------------------------------------------------------
 # require(MarkdownReports) # See: https://vertesy.github.io/MarkdownReports/
 
-clhist <-function(..., breaks = 20, col = "gold1", xlb = "-") { # Draw a histogram from data pasted from clipboard. Works on OS X only.
+clhist <-function(..., breakz = 20, col = "gold1", xlb = "-") { # Draw a histogram from data pasted from clipboard. Works on OS X only.
   whist(fromClipboard.as_num_vec(),breaks = breakz, savefile = F)
 }
 
-clpie <-function(..., percentage = TRUE, both_pc_and_value = F, plotname = "Distribution" ) { #  Draw a pie chart from data pasted from clipboard.  Works on OS X only.
-  wpie(fromClipboard.as_num_vec(), percentage = percentage, savefile = F)
+clpie <-function(..., percentage_ = TRUE, both_pc_and_value = F, plotname = "Distribution" ) { #  Draw a pie chart from data pasted from clipboard.  Works on OS X only.
+  wpie(fromClipboard.as_num_vec(), percentage = percentage_, both_pc_and_value = both_pc_and_value, savefile = F)
 }
 
-clbarplot <-function( ..., col = "gold1", sub = F) { #  Draw a barplot from data pasted from clipboard.  Works on OS X only.
-  wbarplot(fromClipboard.as_num_vec(), percentage = percentage, savefile = F)
+clbarplot <-function( ..., col_ = "gold1", sub = F) { #  Draw a barplot from data pasted from clipboard.  Works on OS X only.
+  wbarplot(fromClipboard.as_num_vec(), col =col_, savefile = F)
 }
 
 
