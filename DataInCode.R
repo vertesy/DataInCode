@@ -39,12 +39,17 @@ fromClipboard.as_named_vec <- function( sep="\t", header=F) { # Paste a list of 
 
 ### Paste variables into your code -------------------------------------------------------------------------------------------------
 
+parse_vec <- function(vector, numeric=F) {	# Serialize data. Take a character vector, parse it to a code-snippet defining an R character vector.
+  if (numeric) { paste("c( ", paste (vector, collapse =  ", "),  " )", collapse = "", sep="")
+  } else {       paste("c( '", paste (vector, collapse =  "', '"),  "')", collapse = "", sep="") }
+}
+
 inline_vec.char <- function(char_vector) {	# Paste data into your code easily. Take a character vector, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
-  toClipboard(print(paste("c( '", paste (char_vector, collapse =  "', '"),  "')", collapse = "", sep=""), quote = F)); print(" Copied to Clipboard")
+  toClipboard(print(parse_vec(char_vector, numeric = F), quote = F)); print(" Copied to Clipboard")
 }
 
 inline_vec.num <- function(num_vector) {	# Paste data into your code easily. Take a numeric vector, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
-  toClipboard(print(paste("c( ", paste (num_vector, collapse =  ", "),  " )", collapse = "", sep=""), quote = F)); print(" Copied to Clipboard")
+  toClipboard(print(parse_vec(num_vector, numeric = T), quote = F)); print(" Copied to Clipboard")
 }
 
 inline_named_vec <- function(num_vector) {	# Paste data into your code easily. Take a numeric vector, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
@@ -60,11 +65,11 @@ inline_list_char <- function(char_list) {	# Paste data into your code easily. Ta
 }
 
 inline_vec.char.from_Clipboard <- function() {	# Paste data into your code easily. Take a list of strings from your clipboard, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
-  toClipboard(print(paste("c( '", paste (fromClipboard.as_vec(), collapse =  "', '"),  "')", collapse = "", sep=""), quote = F)); print(" Copied from & to Clipboard")
+  toClipboard(print(parse_vec(fromClipboard.as_vec(), numeric = F), quote = F));  print(" Copied from & to Clipboard")
 }
 
 inline_vec.num.from_Clipboard <- function() {	# Paste data into your code easily. Take a list of numbers from your clipboard, parse it to a code-snippet defining an R numeric vector, and copy back to the Clipboard.
-  toClipboard(print(paste("c( ", paste (fromClipboard.as_num_vec(), collapse =  ", "),  " )", collapse = "", sep=""), quote = F)); print(" Copied from Clipboard")
+  toClipboard(print(parse_vec(fromClipboard.as_num_vec(), numeric = T), quote = F)); print(" Copied from Clipboard")
 }
 
 oo <- function () {toClipboard(OutDir); print("OutDir is copied to the Clipbiard")}
