@@ -1,5 +1,5 @@
 # DataInCode
-# Store (smaller) data objects in your R code - make your script fully reproducable yet easily sharable. 
+# Store (smaller) data objects in your R code - make your script fully reproducable yet easily sharable.
 # source("~/Github_repos/DataInCode/DataInCode.R")
 # source("https://raw.githubusercontent.com/vertesy/DataInCode/master/DataInCode.R")
 ## RoxygenReady("~/Github_repos/DataInCode/DataInCode.R")
@@ -74,20 +74,5 @@ inline_vec.num.from_Clipboard <- function() {	# Paste data into your code easily
 
 oo <- function () {toClipboard(OutDir); print("OutDir is copied to the Clipbiard")}
 
-
-### Plot from clipboard directly -------------------------------------------------------------------------------------------------
-# require(MarkdownReports) # See: https://vertesy.github.io/MarkdownReports/
-
-clhist <-function(..., breakz = 20, col = "gold1", xlb = "-") { # Draw a histogram from data pasted from clipboard. Works on OS X only.
-  whist(fromClipboard.as_num_vec(),breaks = breakz, savefile = F)
-}
-
-clpie <-function(..., percentage_ = TRUE, both_pc_and_value = F, plotname = "Distribution" ) { #  Draw a pie chart from data pasted from clipboard.  Works on OS X only.
-  wpie(fromClipboard.as_num_vec(), percentage = percentage_, both_pc_and_value = both_pc_and_value, savefile = F)
-}
-
-clbarplot <-function( ..., col_ = "gold1", sub = F) { #  Draw a barplot from data pasted from clipboard.  Works on OS X only.
-  wbarplot(fromClipboard.as_num_vec(), col =col_, savefile = F)
-}
 
 
