@@ -57,6 +57,11 @@ inline_named_vec <- function(num_vector) {	# Paste data into your code easily. T
   print(" Copied to Clipboard")
 }
 
+inline_named_vec.char <- function(num_vector) {	# Take a character vector, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
+  toClipboard(    print(p0("c( ", paste0 (paste0('"', names(num_vector),'"')," = '", num_vector, collapse =  "', "),  "' )", collapse = "", sep=""), quote = F)    )
+  print(" Copied to Clipboard")
+}
+
 inline_list_char <- function(char_list) {	# Paste data into your code easily. Take a list of character vectors, parse it to a code-snippet defining an R list, and copy back to the Clipboard.
   print ("list(", quote = F)
   for (l in 1: length(list)) {
