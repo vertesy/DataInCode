@@ -77,7 +77,7 @@ inline_vec.num.from_Clipboard <- function() {	# Paste data into your code easily
   toClipboard(print(parse_vec(fromClipboard.as_num_vec(), numeric = T), quote = F)); print(" Copied from Clipboard")
 }
 
-oo <- function () {toClipboard(OutDir); print("OutDir is copied to the Clipboard")}
+oo <- function() {toClipboard(OutDir); print("OutDir is copied to the Clipboard")}
 
 from_Clipboard.GeneNames2ID <- function() {	# Copy genes
   XXX=fromClipboard.as_vec(); inline_vec.char(name2id(trimws(XXX)));  print(" Copied from & to Clipboard")

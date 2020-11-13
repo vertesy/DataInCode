@@ -12,7 +12,7 @@
 #' @examples toClipboard (x =  , sep = 	, header = FALSE, row.names = FALSE, col.names = F)
 #' @export
 
-toClipboard <-function (x, sep = "\t", header = FALSE, row.names = FALSE, col.names = F) {
+toClipboard <-function(x, sep = "\t", header = FALSE, row.names = FALSE, col.names = F) {
 	write.table(x, pipe("pbcopy"), sep = sep, row.names = row.names, col.names = col.names, quote = F)
 }
 
@@ -25,7 +25,7 @@ toClipboard <-function (x, sep = "\t", header = FALSE, row.names = FALSE, col.na
 #' @examples fromClipboard (sep = 	, header = F)
 #' @export
 
-fromClipboard <-function (sep = "\t", header = F) {
+fromClipboard <-function(sep = "\t", header = F) {
 	return(read.table(pipe("pbpaste"), sep = sep, header = header, stringsAsFactors = F))
 }
 
@@ -38,7 +38,7 @@ fromClipboard <-function (sep = "\t", header = F) {
 #' @examples fromClipboard.as_vec (sep = 	, header = F)
 #' @export
 
-fromClipboard.as_vec <-function (sep = "\t", header = F) {
+fromClipboard.as_vec <-function(sep = "\t", header = F) {
 	return(as.vector(unlist(read.table(pipe("pbpaste"), sep = sep, header = header, stringsAsFactors = F))))
 }
 
@@ -51,7 +51,7 @@ fromClipboard.as_vec <-function (sep = "\t", header = F) {
 #' @examples fromClipboard.as_num_vec (sep = 	, header = F)
 #' @export
 
-fromClipboard.as_num_vec <-function (sep = "\t", header = F) {
+fromClipboard.as_num_vec <-function(sep = "\t", header = F) {
 	return(as.numeric(unlist(read.table(pipe("pbpaste"), sep = sep, header = header, stringsAsFactors = F))))
 }
 
@@ -64,7 +64,7 @@ fromClipboard.as_num_vec <-function (sep = "\t", header = F) {
 #' @examples fromClipboard.as_named_vec (sep = 	, header = F)
 #' @export
 
-fromClipboard.as_named_vec <-function (sep = "\t", header = F) {
+fromClipboard.as_named_vec <-function(sep = "\t", header = F) {
 	tbl = read.table(pipe("pbpaste"), sep = sep, header = header, stringsAsFactors = F)
 	vecc = tbl[, 2]
 	names(vecc) = tbl[, 1]
@@ -80,7 +80,7 @@ fromClipboard.as_named_vec <-function (sep = "\t", header = F) {
 #' @examples inline_vec.char (char_vector =  )
 #' @export
 
-inline_vec.char <-function (char_vector) {
+inline_vec.char <-function(char_vector) {
 	toClipboard(print(paste("c( '", paste(char_vector, collapse = "', '"), "')", collapse = "", sep = ""),
 		quote = F))
 	print(" Copied to Clipboard")
@@ -94,7 +94,7 @@ inline_vec.char <-function (char_vector) {
 #' @examples inline_vec.num (num_vector =  )
 #' @export
 
-inline_vec.num <-function (num_vector) {
+inline_vec.num <-function(num_vector) {
 	toClipboard(print(paste("c( ", paste(num_vector, collapse = ", "), " )", collapse = "", sep = ""),
 		quote = F))
 	print(" Copied to Clipboard")
@@ -108,7 +108,7 @@ inline_vec.num <-function (num_vector) {
 #' @examples inline_named_vec (num_vector =  )
 #' @export
 
-inline_named_vec <-function (num_vector) {
+inline_named_vec <-function(num_vector) {
 	toClipboard(print(paste("c( ", paste(paste0("\"", names(num_vector), "\""), "=", num_vector, collapse = ", "),
 		" )", collapse = "", sep = ""), quote = F))
 	print(" Copied to Clipboard")
@@ -122,7 +122,7 @@ inline_named_vec <-function (num_vector) {
 #' @examples inline_list_char (char_list =  )
 #' @export
 
-inline_list_char <-function (char_list) {
+inline_list_char <-function(char_list) {
 	print("list(", quote = F)
 	for (l in 1:length(list)) {
 		print(paste("c( '", paste(char_list[[l]], collapse = "', '"), "')", collapse = "", sep = ""),
@@ -138,7 +138,7 @@ inline_list_char <-function (char_list) {
 #' @examples inline_vec.char.from_Clipboard ()
 #' @export
 
-inline_vec.char.from_Clipboard <-function () {
+inline_vec.char.from_Clipboard <-function() {
 	toClipboard(print(paste("c( '", paste(fromClipboard.as_vec(), collapse = "', '"), "')", collapse = "",
 		sep = ""), quote = F))
 	print(" Copied from & to Clipboard")
@@ -151,7 +151,7 @@ inline_vec.char.from_Clipboard <-function () {
 #' @examples inline_vec.num.from_Clipboard ()
 #' @export
 
-inline_vec.num.from_Clipboard <-function () {
+inline_vec.num.from_Clipboard <-function() {
 	toClipboard(print(paste("c( ", paste(fromClipboard.as_num_vec(), collapse = ", "), " )", collapse = "",
 		sep = ""), quote = F))
 	print(" Copied from Clipboard")
@@ -164,7 +164,7 @@ inline_vec.num.from_Clipboard <-function () {
 #' @examples oo ()
 #' @export
 
-oo <-function () {
+oo <-function() {
 	toClipboard(OutDir)
 	print("OutDir is copied to the Clipbiard")
 }
@@ -180,7 +180,7 @@ oo <-function () {
 #' @examples clhist (... =  , breaks = 20, col = gold1, xlb = -)
 #' @export
 
-clhist <-function (..., breaks = 20, col = "gold1", xlb = "-") {
+clhist <-function(..., breaks = 20, col = "gold1", xlb = "-") {
 	whist(fromClipboard.as_num_vec(), breaks = breakz, savefile = F)
 }
 
@@ -195,7 +195,7 @@ clhist <-function (..., breaks = 20, col = "gold1", xlb = "-") {
 #' @examples clpie (... =  , percentage = TRUE, both_pc_and_value = F, plotname = Distribution)
 #' @export
 
-clpie <-function (..., percentage = TRUE, both_pc_and_value = F, plotname = "Distribution") {
+clpie <-function(..., percentage = TRUE, both_pc_and_value = F, plotname = "Distribution") {
 	wpie(fromClipboard.as_num_vec(), percentage = percentage, savefile = F)
 }
 
@@ -209,7 +209,7 @@ clpie <-function (..., percentage = TRUE, both_pc_and_value = F, plotname = "Dis
 #' @examples clbarplot (... =  , col = gold1, sub = F)
 #' @export
 
-clbarplot <-function (..., col = "gold1", sub = F) {
+clbarplot <-function(..., col = "gold1", sub = F) {
 	wbarplot(fromClipboard.as_num_vec(), percentage = percentage, savefile = F)
 }
 
