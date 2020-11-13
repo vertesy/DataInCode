@@ -1,8 +1,8 @@
 # DataInCode
 # Store (smaller) data objects in your R code - make your script fully reproducable yet easily sharable.
-# source("~/Github_repos/DataInCode/DataInCode.R")
+# source("~GitHub/Packages/DataInCode/DataInCode.R")
 # source("https://raw.githubusercontent.com/vertesy/DataInCode/master/DataInCode.R")
-## RoxygenReady("~/Github_repos/DataInCode/DataInCode.R")
+## RoxygenReady("~GitHub/Packages/DataInCode/DataInCode.R")
 
 
 
