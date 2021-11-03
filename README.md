@@ -4,17 +4,39 @@ Store (smaller) data objects in your R code - make your script fully reproducibl
 
 `DataInCode` also contains a set of clipboard interaction functions.
 
+
+
 ## Installation
 
-1.) [Download `DataInCode.R`](https://github.com/vertesy/DataInCode/blob/master/DataInCode.R), save as local `.R` file, and `source(~/path/to/DataInCode.R)`: 
+Install directly from **GitHub** via **devtools** with one R command:
 
-2.) Directly source from the web:
-```R
-source("https://raw.githubusercontent.com/vertesy/DataInCode/master/DataInCode.R")
+```r
+# install.packages("devtools"); # If you don't have it.
+require("devtools")
+devtools::install_github(repo = "vertesy/DataInCode")
 ```
 
+Alternatively, you simply source it from the web. 
+*This way function help will not work, and you will have no local copy of the code on your hard drive.*
+
+```r
+source("https://raw.githubusercontent.com/vertesy/DataInCode/master/DataInCode/R/DataInCode.R")
+```
+
+Or, take [Download `DataInCode.R`](https://github.com/vertesy/DataInCode/blob/master/DataInCode.R), save as local `.R` file, and `source(~/path/to/DataInCode.R)`: 
+
+
+
 ## Usage
-After `source("~/path/to/DataInCode.R")`  you can use any of the functions listed below. 
+Simply load the package:
+
+```r
+require("DataInCode")
+```
+
+Or use command after `source("~/path/to/DataInCode.R")`.
+
+
 
 ### Examples
 
