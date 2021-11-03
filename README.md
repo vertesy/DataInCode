@@ -36,9 +36,54 @@ require("DataInCode")
 
 Or use command after `source("~/path/to/DataInCode.R")`.
 
+```r
+> MyVec = c(1:2, 'ava'); names(MyVec) =3:1
+> MyVec2 = c(1:3)
+> toClipboard(MyVec2)
+> fromClipboard()
+  V1
+1  1
+2  2
+3  3
+> fromClipboard.as_vec()
+[1] "Length: 3"
+[1] 1 2 3
+> fromClipboard.as_num_vec()
+[1] "Length: 3"
+[1] 1 2 3
+> # fromClipboard.as_named_vec()
+> parse_vec(MyVec)
+[1] "c( '1', '2', 'ava')"
+> inline_vec.char(MyVec)
+[1] c( '1', '2', 'ava')
+[1] " Copied to Clipboard"
+> inline_vec.num(MyVec)
+[1] c( 1, 2, ava )
+[1] " Copied to Clipboard"
+> inline_named_vec(MyVec)
+[1] c( "3" = 1, "2" = 2, "1" = ava )
+[1] " Copied to Clipboard"
+> inline_named_vec.char(MyVec)
+[1] c( "3" = '1', "2" = '2', "1" = 'ava' )
+[1] " Copied to Clipboard"
+> inline_list_char(MyVec)
+[1] list(
+[1] c( '1')
+[1] )
+> inline_vec.char.from_Clipboard()
+[1] "Length: 1"
+[1] c( 'c( 3 = 1, 2 = 2, 1 = ava )')
+[1] " Copied from & to Clipboard"
+> toClipboard(MyVec2)
+> inline_vec.num.from_Clipboard()
+[1] "Length: 3"
+[1] c( 1, 2, 3 )
+[1] " Copied from Clipboard"
+```
 
 
-### Examples
+
+#### Example in detail
 
 #### `inline_named_vec()`
 
