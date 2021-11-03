@@ -15,5 +15,5 @@ fromClipboard.as_vec(sep = "\\t", header = F)
 Paste a list of numbers from your clipboard (e.g. from Excel) into R, parse it to a code-snippet defining an R vector on OS X.
 }
 \examples{
-fromClipboard.as_vec()
+# fromClipboard.as_vec()
 }

@@ -10,5 +10,5 @@ inline_vec.char.from_Clipboard()
 Paste data into your code easily. Take a list of strings from your clipboard, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
 }
 \examples{
-MyVec = c(1:3); inline_vec.char.from_Clipboard(MyVec)
+MyVec = c(1:3); # inline_vec.char.from_Clipboard(MyVec)
 }

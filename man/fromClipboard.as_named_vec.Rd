@@ -15,5 +15,5 @@ fromClipboard.as_named_vec(sep = "\\t", header = F)
 Paste a list of strings from your clipboard (e.g. from Excel) into R, parse it to a numeric R vector on OS X.
 }
 \examples{
-fromClipboard.as_named_vec()
+# fromClipboard.as_named_vec()
 }

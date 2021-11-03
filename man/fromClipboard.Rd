@@ -15,5 +15,5 @@ fromClipboard(sep = "\\t", header = F)
 Paste data from your clipboard (e.g. a table from Excel) into R, parse it to a code-snippet defining an R data frame on OS X.
 }
 \examples{
-fromClipboard()
+# fromClipboard()
 }

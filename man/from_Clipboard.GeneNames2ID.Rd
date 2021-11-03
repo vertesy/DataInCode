@@ -10,5 +10,5 @@ from_Clipboard.GeneNames2ID()
 Copy genes
 }
 \examples{
-MyVec = c(1:3); from_Clipboard.GeneNames2ID(MyVec)
+MyVec = c(1:3); # from_Clipboard.GeneNames2ID(MyVec)
 }

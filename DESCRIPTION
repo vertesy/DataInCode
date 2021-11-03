@@ -1,6 +1,6 @@
 Package: DataInCode
 Title: DataInCode to store data structures in your R code
-Version: 2.0.1
+Version: 2.0.2
 Authors@R: 
     person(given = "Abel",
            family = "Vertesy",
@@ -20,7 +20,7 @@ Imports:
     utils
 Encoding: UTF-8
 LazyData: true
-Packaged: 2021-11-03 10:07:27
+Packaged: 2021-11-03 10:10:49
 Repository: CRAN
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

@@ -13,5 +13,5 @@ inline_vec.char(char_vector)
 Paste data into your code easily. Take a character vector, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
 }
 \examples{
-MyVec = c(1:3); inline_vec.char(MyVec)
+MyVec = c(1:3); # inline_vec.char(MyVec)
 }
