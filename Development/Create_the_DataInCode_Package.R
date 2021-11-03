@@ -43,10 +43,10 @@ DESCRIPTION <- list("Title" = "DataInCode to store data structures in your R cod
     dput(), where you can parse data objects into the code that generates them.
     DataInCode also contains a set of clipboard interaction functions."
     , "License" = "GPL-3 + file LICENSE"
-    , "Version" = "0.1.5"
+    , "Version" = "2.0.1"
     , "Packaged" =  Sys.time()
     , "Repository" =  "CRAN"
-    , "Imports" = "StringParser, utils"
+    , "Imports" = "Stringendo, utils"
     # , "Suggests" = ""
     , "BugReports"= "https://github.com/vertesy/DataInCode/issues"
 )

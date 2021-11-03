@@ -9,3 +9,6 @@ inline_vec.num.from_Clipboard()
 \description{
 Paste data into your code easily. Take a list of numbers from your clipboard, parse it to a code-snippet defining an R numeric vector, and copy back to the Clipboard.
 }
+\examples{
+MyVec = c(1:3); inline_vec.num.from_Clipboard(MyVec)
+}

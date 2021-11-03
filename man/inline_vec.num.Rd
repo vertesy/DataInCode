@@ -12,3 +12,6 @@ inline_vec.num(num_vector)
 \description{
 Paste data into your code easily. Take a numeric vector, parse it to a code-snippet defining an R character vector, and copy back to the Clipboard.
 }
+\examples{
+MyVec = c(1:3); inline_vec.num(MyVec)
+}

@@ -14,3 +14,6 @@ parse_vec(vector, numeric = F)
 \description{
 Serialize data. Take a character vector, parse it to a code-snippet defining an R character vector.
 }
+\examples{
+MyVec = c(1:3); parse_vec(MyVec)
+}

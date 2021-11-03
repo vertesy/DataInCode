@@ -12,3 +12,6 @@ inline_list_char(char_list)
 \description{
 Paste data into your code easily. Take a list of character vectors, parse it to a code-snippet defining an R list, and copy back to the Clipboard.
 }
+\examples{
+MyVec = c(1:3); inline_list_char(MyVec)
+}

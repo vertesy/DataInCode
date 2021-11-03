@@ -7,10 +7,13 @@
 fromClipboard.as_vec(sep = "\\t", header = F)
 }
 \arguments{
-\item{sep}{PARAM_DESCRIPTION, Default: '    '}
+\item{sep}{PARAM_DESCRIPTION, Default: ' '}
 
 \item{header}{PARAM_DESCRIPTION, Default: F}
 }
 \description{
 Paste a list of numbers from your clipboard (e.g. from Excel) into R, parse it to a code-snippet defining an R vector on OS X.
+}
+\examples{
+fromClipboard.as_vec()
 }

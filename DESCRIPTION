@@ -1,6 +1,6 @@
 Package: DataInCode
 Title: DataInCode to store data structures in your R code
-Version: 0.1.5
+Version: 2.0.1
 Authors@R: 
     person(given = "Abel",
            family = "Vertesy",
@@ -16,11 +16,11 @@ Description: DataInCode is a set of R functions that allows you to store
 License: GPL-3 + file LICENSE
 BugReports: https://github.com/vertesy/DataInCode/issues
 Imports: 
-    StringParser,
+    Stringendo,
     utils
 Encoding: UTF-8
 LazyData: true
-Packaged: 2021-11-01 22:49:49
+Packaged: 2021-11-03 10:07:27
 Repository: CRAN
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

@@ -7,10 +7,13 @@
 fromClipboard(sep = "\\t", header = F)
 }
 \arguments{
-\item{sep}{PARAM_DESCRIPTION, Default: '    '}
+\item{sep}{PARAM_DESCRIPTION, Default: ' '}
 
 \item{header}{PARAM_DESCRIPTION, Default: F}
 }
 \description{
 Paste data from your clipboard (e.g. a table from Excel) into R, parse it to a code-snippet defining an R data frame on OS X.
+}
+\examples{
+fromClipboard()
 }
