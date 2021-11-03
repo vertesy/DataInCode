@@ -1,3 +1,5 @@
+#### *Cite via:* [![DOI](https://zenodo.org/badge/64473225.svg)](https://zenodo.org/badge/latestdoi/64473225)
+
 # DataInCode
 
 Store (smaller) data objects in your R code - make your script fully reproducible yet easily sharable. Think of it as an extended version of `dput()`, where you can parse data objects into the code that generates them.
@@ -120,3 +122,9 @@ inline_named_vec(values)
 - `clhist()`
 - `clpie()`
 - `clbarplot()`
+
+
+
+#### *Cite via:* [![DOI](https://zenodo.org/badge/64473225.svg)](https://zenodo.org/badge/latestdoi/64473225)
+
+# 
