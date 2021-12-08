@@ -24,6 +24,7 @@ if (print == TRUE) {
 
 # Setup ------------------------
 PackageName = 	"DataInCode"
+package.version = "2.0.2"
 setwd("~/GitHub/Packages/")
 
 RepositoryDir = kollapse("~/GitHub/Packages/", PackageName, "/")
@@ -43,7 +44,7 @@ DESCRIPTION <- list("Title" = "DataInCode to store data structures in your R cod
     dput(), where you can parse data objects into the code that generates them.
     DataInCode also contains a set of clipboard interaction functions."
     , "License" = "GPL-3 + file LICENSE"
-    , "Version" = "2.0.2"
+    , "Version" = package.version
     , "Packaged" =  Sys.time()
     , "Repository" =  "CRAN"
     , "Imports" = "Stringendo, utils"
@@ -91,6 +92,12 @@ install(RepositoryDir)
 # help("wplot")
 # cat("\014")
 # devtools::run_examples()
+{
+  "update cff version"
+  citpath <- paste0(RepositoryDir, 'CITATION.cff')
+  xfun::gsub_file(file = citpath, perl = T
+                  , "^version: v.+", paste0("version: v", package.version))
+}
 
 
 # Test if you can install from github ------------------------------------------------
