@@ -1,37 +1,35 @@
 ######################################################################################################
-# Create_the_DataInCode_Package.v0.1.R
-# 31 10 2021
+# Create_the_DataInCode_Package.R
 ######################################################################################################
-# source("/Users/abel.vertesy/GitHub/Packages/DataInCode/Development/Create_the_DataInCode_Package.v0.1.R")
+# source("/Users/abel.vertesy/GitHub/Packages/DataInCode/Development/Create_the_DataInCode_Package.R")
 rm(list = ls(all.names = TRUE));
 try(dev.off(), silent = TRUE)
 # install.packages("devtools")
 # Functions ------------------------
-try (source('~/GitHub/Packages/CodeAndRoll/CodeAndRoll.R'),silent= FALSE)
 
 # irequire("devtools")
 # install_version("devtools", version = "2.0.2", repos = "http://cran.at.r-project.org")
-irequire("devtools")
-irequire("roxygen2")
-irequire("stringr")
+# irequire("devtools")
+# irequire("roxygen2")
+# irequire("stringr")
 
-kollapse <-function(..., print = TRUE) {
-if (print == TRUE) {
-    print(paste0(c(...), collapse = ""))
-  }
-  paste0(c(...), collapse = "")
-}
+# kollapse <-function(..., print = TRUE) {
+# if (print == TRUE) {
+#     print(paste0(c(...), collapse = ""))
+#   }
+#   paste0(c(...), collapse = "")
+# }
 
 # Setup ------------------------
-PackageName = 	"DataInCode"
-package.version = "2.0.2"
+package.name <- 	"DataInCode"
+package.version <- "2.0.2"
 setwd("~/GitHub/Packages/")
 
-RepositoryDir = kollapse("~/GitHub/Packages/", PackageName, "/")
-fname = 	kollapse(PackageName, ".R")
-Package_FnP = 	kollapse(RepositoryDir, "R/", fname)
+RepositoryDir <- paste0("~/GitHub/Packages/", PackageName, "/")
+fname <-	paste0(PackageName, ".R")
+Package_FnP <-		paste0(RepositoryDir, "R/", fname)
 
-BackupDir = "~/GitHub/Packages/DataInCode/Development/"
+BackupDir <- "~/GitHub/Packages/DataInCode/Development/"
 dir.create(BackupDir)
 
 # devtools::use_package("vioplot")
@@ -69,8 +67,8 @@ if ( !dir.exists(RepositoryDir) ) { create(path = RepositoryDir, description = D
 # RoxygenReady(Package_FnP)
 
 # replace output files ------------------------------------------------
-BackupOldFile = 	kollapse(BackupDir, "Development", ".bac", print = FALSE)
-AnnotatedFile = 	kollapse(BackupDir, "Development", ".annot.R", print = FALSE)
+BackupOldFile <-	paste0(BackupDir, "Development", ".bac", print = FALSE)
+AnnotatedFile <-	paste0(BackupDir, "Development", ".annot.R", print = FALSE)
 file.copy(from = Package_FnP, to = BackupOldFile, overwrite = TRUE)
 # file.copy(from = AnnotatedFile, to = Package_FnP, overwrite = TRUE)
 
@@ -80,12 +78,12 @@ file.copy(from = Package_FnP, to = BackupOldFile, overwrite = TRUE)
 # Compile a package ------------------------------------------------
 setwd(RepositoryDir)
 getwd()
-document()
+devtools::document()
 
 
 # Install your package ------------------------------------------------
 # # setwd(RepositoryDir)
-install(RepositoryDir)
+devtools::install(RepositoryDir)
 # require("DataInCode")
 # # remove.packages("DataInCode")
 # # Test your package ------------------------------------------------
