@@ -1,7 +1,7 @@
 ######################################################################################################
 # Create_the_DataInCode_Package.R
 ######################################################################################################
-# source("/Users/abel.vertesy/GitHub/Packages/DataInCode/Development/Create_the_DataInCode_Package.R")
+# source("~/GitHub/Packages/DataInCode/Development/Create_the_DataInCode_Package.R")
 rm(list = ls(all.names = TRUE));
 try(dev.off(), silent = TRUE)
 # install.packages("devtools")
