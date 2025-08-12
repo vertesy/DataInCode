@@ -15,7 +15,7 @@ Install directly from **GitHub** via **devtools** with one R command:
 ```r
 # install.packages("devtools"); # If you don't have it.
 require("devtools")
-devtools::install_github(repo = "vertesy/DataInCode")
+devtools::install_github(repo = "vertesy/DataInCode", ref = "main")
 ```
 
 Alternatively, you simply source it from the web. 
